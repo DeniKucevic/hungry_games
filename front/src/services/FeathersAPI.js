@@ -22,6 +22,16 @@ const addRestaurant = async (body) => {
   return await Axios.post(`${Base_URL}/restaurant`, body);
 };
 
+//brise restoran
+const restDelete = async (id) => {
+  return await Axios.delete(`${Base_URL}/restaurant/${id}`);
+};
+
+//pretrazuje restorane
+const searchRest = async (param) => {
+  return await Axios.get(`${Base_URL}/restaurant?name=${param}`);
+};
+
 //************************************************************ */
 //ankete
 const GetPolls = async () => {
@@ -34,4 +44,6 @@ export {
   GetPolls,
   updateRestaurant,
   addRestaurant,
+  restDelete,
+  searchRest,
 };

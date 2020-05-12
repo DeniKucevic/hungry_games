@@ -3,7 +3,7 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import { GetRestaurant, updateRestaurant } from "../../../services/FeathersAPI";
 import { TextField, Button } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "../SideBar";
 import Header from "../Header";
 
@@ -24,7 +24,7 @@ const RestaurantEdit = () => {
       setnewAddress(res.data.address);
       setnewDesc(res.data.desc);
     });
-  }, []);
+  }, [name]);
 
   //salje updatedovan body restorana
   async function handleClick() {
@@ -90,7 +90,7 @@ const RestaurantEdit = () => {
         />
         <div style={{ display: "flex" }}>
           <Link to="/home">
-            <Button 
+            <Button
               variant="contained"
               color="secondary"
               startIcon={<DeleteIcon />}
