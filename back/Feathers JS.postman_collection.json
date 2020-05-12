@@ -1,0 +1,1113 @@
+{
+	"info": {
+		"_postman_id": "2762f034-4ce6-40db-aaef-83f473149c3f",
+		"name": "Feathers JS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}ping",
+							"host": [
+								"{{base-url}}ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}ping/1",
+							"host": [
+								"{{base-url}}ping"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}restaurant?$skip=1&$limit=1",
+							"host": [
+								"{{base-url}}restaurant"
+							],
+							"query": [
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}restaurant/2",
+							"host": [
+								"{{base-url}}restaurant"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"0\",\r\n    \"name\": \"Fenjer test\",\r\n    \"address\": \"Vase Pelagića 3\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}restaurant/0",
+							"host": [
+								"{{base-url}}restaurant"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"Vase Pelagića 3 test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}restaurant/2",
+							"host": [
+								"{{base-url}}restaurant"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Restoran novi\",\r\n    \"address\": \"Vase Pelagića 333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}restaurant",
+							"host": [
+								"{{base-url}}restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}restaurant/3",
+							"host": [
+								"{{base-url}}restaurant"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Meal",
+			"item": [
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}meal",
+							"host": [
+								"{{base-url}}meal"
+							],
+							"query": [
+								{
+									"key": "$skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "$limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "read",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}meal/2",
+							"host": [
+								"{{base-url}}meal"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"title\": \"Burito jbg\",\n    \"available\": true,\n    \"price\": 380,\n    \"restaurantId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}meal/6",
+							"host": [
+								"{{base-url}}meal"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}meal/6",
+							"host": [
+								"{{base-url}}meal"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Burito jbg 2\",\n    \"available\": true,\n    \"price\": 380,\n    \"restaurantId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}meal",
+							"host": [
+								"{{base-url}}meal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}meal/5",
+							"host": [
+								"{{base-url}}meal"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Vote",
+			"item": [
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}vote",
+							"host": [
+								"{{base-url}}vote"
+							],
+							"query": [
+								{
+									"key": "$skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "$limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "read",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}vote/2",
+							"host": [
+								"{{base-url}}vote"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"restaurantId\": 1,\n    \"votes\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}vote/1",
+							"host": [
+								"{{base-url}}vote"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"votes\": 16\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}vote/0",
+							"host": [
+								"{{base-url}}vote"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"restaurantId\": 1,\n    \"votes\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}vote",
+							"host": [
+								"{{base-url}}vote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}vote/3",
+							"host": [
+								"{{base-url}}vote"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9d13bb7e-34a5-4fd1-a8e4-5b806246724b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ccc16fb-471e-436c-9287-f4e204990ddd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Poll",
+			"item": [
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}poll",
+							"host": [
+								"{{base-url}}poll"
+							],
+							"query": [
+								{
+									"key": "$skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "$limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "read",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}poll/0",
+							"host": [
+								"{{base-url}}poll"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"label\": \"Problem ponedeljka\",\n    \"date\": \"2020-04-20T00:00:00.000Z\",\n    \"restaurants\": [2,3,4],\n    \"votes\": [0,1,2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}poll/0",
+							"host": [
+								"{{base-url}}poll"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"label\": \"Problem ponedeljka rename\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}poll/0",
+							"host": [
+								"{{base-url}}poll"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"label\": \"Problem ponedeljka\",\r\n    \"restaurants\": [0,1,2],\r\n    \"votes\": [0,1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}poll",
+							"host": [
+								"{{base-url}}poll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}poll/1",
+							"host": [
+								"{{base-url}}poll"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "af4ba1b9-a67d-46f7-81dd-451f7aecce9f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f55586e6-81b1-408d-ba99-f5835bc6e8af",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order item",
+			"item": [
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}order-item?orderId[$in]=0",
+							"host": [
+								"{{base-url}}order-item"
+							],
+							"query": [
+								{
+									"key": "$skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "$limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "read",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "orderId[$in]",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}order-item/0",
+							"host": [
+								"{{base-url}}order-item"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n    \"note\": \"Blago ljuto\",\r\n    \"quantity\": 1,\r\n    \"mealId\": 2,\r\n    \"orderId\": 0,\r\n    \"user\": \"Pera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}order-item/0",
+							"host": [
+								"{{base-url}}order-item"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}order-item/0",
+							"host": [
+								"{{base-url}}order-item"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"note\": \"Blago ljuto\",\r\n    \"quantity\": 1,\r\n    \"mealId\": 2,\r\n    \"orderId\": 1,\r\n    \"user\": \"Pera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}order-item",
+							"host": [
+								"{{base-url}}order-item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}order-item/3",
+							"host": [
+								"{{base-url}}order-item"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7a18a21a-6716-4e20-854b-6b91f97e5636",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "21908f4f-f595-4671-ad69-58b236837e8d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}order",
+							"host": [
+								"{{base-url}}order"
+							],
+							"query": [
+								{
+									"key": "$skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "$limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "read",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId[$in]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "restaurantId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}order/0",
+							"host": [
+								"{{base-url}}order"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2020-04-20T00:00:00.000Z\",\r\n    \"restaurantId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}order/0",
+							"host": [
+								"{{base-url}}order"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"2020-04-20T00:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}order/0",
+							"host": [
+								"{{base-url}}order"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2020-04-27T00:00:00.000Z\",\r\n    \"restaurantId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}order",
+							"host": [
+								"{{base-url}}order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base-url}}order/1",
+							"host": [
+								"{{base-url}}order"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "73a40253-e379-484d-8476-d8870d16962f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9318ccca-d610-4446-b7ab-9d9a8c3b70ff",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b0827aa8-d6da-4460-bc1b-896209b7c619",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "426e38c6-8d08-42f2-bc03-2225268f8e6c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cc2642bd-a37f-4101-ace9-9e83783376e9",
+			"key": "base-url",
+			"value": "http://localhost:3030/",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
