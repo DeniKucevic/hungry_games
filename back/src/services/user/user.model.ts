@@ -6,6 +6,7 @@ export interface UserModel {
   name: string;
   userName: string;
   password: string;
+  email: string;
   description?: string;
   restaurantId: Array<RestaurantModel> | Array<number>;
   meal: Array<MealModel> | Array<number>;
@@ -18,6 +19,7 @@ export const startUsers: Array<UserModel> = [
     name: "Nemanja",
     userName: "MEMI",
     password: "MEMI123",
+    email: "nesto@nesto.com",
     description: "Napisite nesto o sebi",
     restaurantId: [0,1,2,3],
     meal: [0],

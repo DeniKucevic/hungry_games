@@ -1,29 +1,23 @@
 import React from "react";
 import { Button } from "@material-ui/core";
-import { useHistory, Route, Link } from "react-router-dom";
-import RestaurantEdit from "./RestaurantEdit";
+import { Link } from "react-router-dom";
 
 const RestaurantsList = ({ restaurant }) => {
-  const history = useHistory();
-
-  const handleClick = (restaurant) => {
-    return <Route path={`/edt/:${restaurant.id}`} component={RestaurantEdit} />;
-  };
-
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <h4>{restaurant.name}</h4>
-          <h4>{restaurant.address}</h4>
+          <p>
+            <b>{restaurant.name}</b>
+          </p>
+          <p>{restaurant.address}</p>
+        </div>
+        <div>
+          <p>{restaurant.desc}</p>
         </div>
         <div style={{ alignSelf: "flex-end" }}>
-          <Link to={`/edt/:${restaurant.id}`}>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => handleClick(restaurant)}
-            >
+          <Link to={"/" + restaurant.id}>
+            <Button variant="contained" color="primary">
               Edit
             </Button>
           </Link>

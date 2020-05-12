@@ -6,7 +6,10 @@
   "private": true,
   "main": "src",
   "keywords": [
-    "feathers", "hungry games", "brixi", "42"
+    "feathers",
+    "hungry games",
+    "brixi",
+    "42"
   ],
   "author": {
     "name": "Ivan Herceg",
@@ -42,6 +45,7 @@
   },
   "types": "lib/",
   "dependencies": {
+    "@feathersjs/authentication": "^4.5.3",
     "@feathersjs/configuration": "^4.5.3",
     "@feathersjs/errors": "^4.5.3",
     "@feathersjs/express": "^4.5.3",
