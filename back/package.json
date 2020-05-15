@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "homepage": "",
   "private": true,
-  "main": "src",
+  "main": "index.ts",
   "keywords": [
     "feathers",
     "hungry games",
@@ -33,7 +33,7 @@
   "scripts": {
     "test": "npm run compile && npm run jest",
     "dev": "ts-node-dev --no-notify src/",
-    "start": "npm run compile && node lib/",
+    "start": "npm run compile && nodemon lib/",
     "jest": "jest  --forceExit",
     "compile": "shx rm -rf lib/ && tsc"
   },

@@ -15,6 +15,8 @@ import About from "./layout/publicRoutes/links/About";
 import Contact from "./layout/publicRoutes/links/Contact";
 import NoMatch from "./layout/NoMatch";
 import RestaurantEdit from "./layout/privateRoutes/home/RestaurantEdit";
+import PollVote from "./layout/privateRoutes/polls/PollVote";
+import AddPoll from "./layout/privateRoutes/polls/AddPoll";
 
 function App() {
   return (
@@ -30,9 +32,12 @@ function App() {
         <PrivateRoute component={Settings} exact path="/settings" />
         <PrivateRoute component={Order} exact path="/orders" />
         <PrivateRoute component={AddRest} exact path="/addrestaurant" />
-        <Route exact path="/:name">
-          {" "}
-          <RestaurantEdit />{" "}
+        <PrivateRoute component={AddPoll} exact path="/addpoll" />
+        <Route exact path="/poll:name">
+          <PollVote />
+        </Route>
+        <Route exact path="/edt:id">
+          <RestaurantEdit />
         </Route>
         <Route path component={NoMatch} />
       </Switch>

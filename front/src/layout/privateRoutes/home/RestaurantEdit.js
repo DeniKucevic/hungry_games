@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
-import { GetRestaurant, updateRestaurant } from "../../../services/FeathersAPI";
+import {
+  GetRestaurant,
+  updateRestaurant,
+  getMeal,
+} from "../../../services/FeathersAPI";
 import { TextField, Button } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -23,6 +27,13 @@ const RestaurantEdit = () => {
       setnewName(res.data.name);
       setnewAddress(res.data.address);
       setnewDesc(res.data.desc);
+    });
+  }, [name]);
+
+  useEffect(() => {
+    getMeal(name).then((res) => {
+      console.log(res);
+      console.log(name);
     });
   }, [name]);
 
@@ -95,7 +106,7 @@ const RestaurantEdit = () => {
               color="secondary"
               startIcon={<DeleteIcon />}
             >
-              Delete
+              Cancel
             </Button>
           </Link>
           <Button

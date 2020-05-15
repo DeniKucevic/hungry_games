@@ -16,9 +16,12 @@ import services from "./services";
 import appHooks from "./app.hooks";
 import channels from "./channels";
 // Don't remove this comment. It's needed to format import lines nicely.
+//import { Meal } from "./services/meal/meal.class";
+
+//const service = require("feathers-sequelize");
 
 const app: Application = express(feathers());
-
+//app.use("/meal", service(Meal));
 // Load app configuration
 app.configure(configuration());
 // Enable security, CORS, compression, favicon and body parsing

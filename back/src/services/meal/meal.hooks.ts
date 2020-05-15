@@ -1,13 +1,23 @@
+import { HookContext } from "@feathersjs/feathers";
 
 export default {
   before: {
     all: [],
     find: [],
-    get: [],
+    get: [
+      (context: any) => {
+        const { query = {} } = context.params;
+        if (query.restaurantId) {
+          query.restaurantId = parseInt(query.restaurantId, 10);
+        }
+        context.query = query;
+        return context;
+      },
+    ],
     create: [],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   after: {
@@ -17,7 +27,7 @@ export default {
     create: [],
     update: [],
     patch: [],
-    remove: []
+    remove: [],
   },
 
   error: {
@@ -27,6 +37,6 @@ export default {
     create: [],
     update: [],
     patch: [],
-    remove: []
-  }
+    remove: [],
+  },
 };

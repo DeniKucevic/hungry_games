@@ -3,6 +3,8 @@ import { GetPolls } from "../../../services/FeathersAPI";
 import SideBar from "../SideBar";
 import Header from "../Header";
 import PollsList from "./PollsList";
+import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const Polls = () => {
   const [polls, setPolls] = useState([]);
@@ -24,6 +26,15 @@ const Polls = () => {
         {polls.map((el) => (
           <PollsList poll={el} key={el.id} />
         ))}
+        <Link to="/addpoll">
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ borderRadius: "50%", fontSize: "2em" }}
+          >
+            +
+          </Button>
+        </Link>
       </main>
     </>
   );

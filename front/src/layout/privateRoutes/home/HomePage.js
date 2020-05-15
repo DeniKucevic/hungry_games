@@ -3,14 +3,7 @@ import SideBar from "../SideBar";
 import Header from "../Header";
 import { GetRestaurants, searchRest } from "../../../services/FeathersAPI";
 import RestaurantsList from "./RestaurantsList";
-import {
-  Tabs,
-  Tab,
-  ButtonGroup,
-  Button,
-  Input,
-  FormControl,
-} from "@material-ui/core";
+import { Tabs, Tab, ButtonGroup, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {

@@ -27,7 +27,7 @@ const RestaurantsList = ({ restaurant, rerender }) => {
           >
             remove
           </Button>
-          <Link to={"/" + restaurant.id}>
+          <Link to={"/edt" + restaurant.id}>
             <Button variant="contained" color="primary">
               Edit
             </Button>
