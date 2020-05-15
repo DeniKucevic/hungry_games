@@ -58,8 +58,12 @@ const HomePage = () => {
         centered
       >
         <Tab label="Restaurants" onClick={() => <Link to="/home" />} />
-        <Tab label="Meals" onClick={<Link to="/meals" />} />
-        <Tab label="Orders" />
+        <Link to="/meals">
+          <Tab label="Meals" />
+        </Link>
+        <Link to="/userorders">
+          <Tab label="/userorders" />
+        </Link>
       </Tabs>
       <SideBar />
       <div style={{ marginLeft: "10%", marginRight: "10%" }}>

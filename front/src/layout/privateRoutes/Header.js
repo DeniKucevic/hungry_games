@@ -7,6 +7,8 @@ import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
+import { deleteToken } from "../../services/auth.service";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MenuListComposition() {
   const classes = useStyles();
+  const history = useHistory();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const handleToggle = () => {
@@ -26,6 +29,8 @@ export default function MenuListComposition() {
   };
 
   const handleClose = (event) => {
+    deleteToken();
+    history.push("/");
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
@@ -52,10 +57,17 @@ export default function MenuListComposition() {
 
   return (
     <div className={(classes.root, "header-private")}>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      ></div>
       <div className="header-private-button">
-        <Button variant="outlined" color="secondary"
+        <Button
+          variant="outlined"
+          color="secondary"
           ref={anchorRef}
           aria-controls={open ? "menu-list-grow" : undefined}
           aria-haspopup="true"

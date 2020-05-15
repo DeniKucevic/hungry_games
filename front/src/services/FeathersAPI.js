@@ -100,6 +100,18 @@ const getOrders = async () => {
   return await Axios.get(`${Base_URL}/order`);
 };
 
+//******************************************* */
+//OrderItems
+const getItems = async () => {
+  return await Axios.get(`${Base_URL}/order-item`);
+};
+
+//******************************************** */
+//meal
+const getMeals = async () => {
+  return await Axios.get(`${Base_URL}/meal`);
+};
+
 export {
   GetRestaurants,
   GetRestaurant,
@@ -118,4 +130,6 @@ export {
   deletePoll,
   createOrder,
   getOrders,
+  getItems,
+  getMeals,
 };

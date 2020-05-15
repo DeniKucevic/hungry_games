@@ -17,6 +17,9 @@ import NoMatch from "./layout/NoMatch";
 import RestaurantEdit from "./layout/privateRoutes/home/RestaurantEdit";
 import PollVote from "./layout/privateRoutes/polls/PollVote";
 import AddPoll from "./layout/privateRoutes/polls/AddPoll";
+import OrderList from "./layout/privateRoutes/order/OrderList";
+import UserMeals from "./layout/privateRoutes/home/UserMeals";
+import UserOrders from "./layout/privateRoutes/home/UserOrders";
 
 function App() {
   return (
@@ -33,8 +36,13 @@ function App() {
         <PrivateRoute component={Order} exact path="/orders" />
         <PrivateRoute component={AddRest} exact path="/addrestaurant" />
         <PrivateRoute component={AddPoll} exact path="/addpoll" />
+        <PrivateRoute component={UserMeals} exact path="/meals" />
+        <PrivateRoute component={UserOrders} exact path="/userorders" />
         <Route exact path="/poll:name">
           <PollVote />
+        </Route>
+        <Route exact path="/order/:name">
+          <OrderList />
         </Route>
         <Route exact path="/edt:id">
           <RestaurantEdit />
